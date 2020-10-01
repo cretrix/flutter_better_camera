@@ -318,10 +318,9 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
   switch (resolutionPreset) {
     case max:
       if ([_captureSession canSetSessionPreset:AVCaptureSessionPresetHigh]) {
-        _captureSession.sessionPreset = AVCaptureSessionPresetHigh;
+	_captureSession.sessionPreset = AVCaptureSessionPresetPhoto;
         _previewSize =
-            CGSizeMake(_captureDevice.activeFormat.highResolutionStillImageDimensions.width,
-                       _captureDevice.activeFormat.highResolutionStillImageDimensions.height);
+            CGSizeMake(4032, 3024);
         break;
       }
     case ultraHigh:
